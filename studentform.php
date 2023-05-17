@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student Form</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+      <script>
+            $(document).ready(function () {
+            $('#example').DataTable();
+            });
+      </script>
+
+</head>
+<body>
+      <div class="container mt-4">
+      <form name="regform" method="post" action="storevalue.php" onsubmit="return validateForm()">
+      
+  <div class="row">
+    <div class="form-group col-md-4">
+    <label for="studentid">Student ID</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="number" class="form-control" name="id" placeholder="Student ID">
+    </div>
+    <div class="form-group col-md-4">
+    <label for="fname">First Name</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="fname" placeholder="First Name">
+    </div>
+    <div class="form-group col-md-4">
+    <label for="lname">Last Name</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="lname" placeholder="Last Name">
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="form-group col-md-6">
+    
+    <label for="batch">Batch / Class</label>
+    <input type="text" class="form-control" name="batch" placeholder="batch name / class">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="email id">
+  </div>
+  </div>
+  <div class="row">
+  <h6>Data entry for subject</h6>
+    <div class="form-group col-md-4">
+      <!-- <label for="inputCity">City</label> -->
+      <label for="English">English</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="english" placeholder="enter marks">
+    </div>
+    <div class="form-group col-md-4">
+      <!-- <label for="inputState">State</label> -->
+      <label for="Hindi">Hindi</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="hindi" placeholder="enter marks">
+    </div>
+    <div class="form-group col-md-4">
+    <label for="Math">Math</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="math" placeholder="enter marks">
+    </div>
+  </div>
+  <div class="row">
+  <!-- <h6>Data entry for subject</h6> -->
+    <div class="form-group col-md-4">
+      <!-- <label for="inputCity">City</label> -->
+      <label for="Science">Science</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="science" placeholder="enter marks">
+    </div>
+    <div class="form-group col-md-4">
+      <!-- <label for="inputState">State</label> -->
+      <label for="History">History</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="history" placeholder="enter marks">
+    </div>
+    <div class="form-group col-md-4">
+    <label for="Geography">Geography</label><span style="color:#ff0000">&nbsp;*</span>
+      <input type="text" class="form-control" name="geography" placeholder="enter marks">
+    </div>
+  </div>
+
+  <div class="form-group">
+  
+      <!-- <label for="inputState">State</label> -->
+      <label for="name">Remarks</label>
+      <textarea class="form-control" name="remarks" placeholder="Description" rows="4"></textarea>
+    
+  </div><br>
+  <div>
+                        <input type="submit" value="submit" class="btn btn-primary" name="submit">
+                        </div> 
+</form>
+      </div>
+      <!-- all javascript validation -->
+      <script>
+     function validateForm()
+     {
+        var letters = /^[a-zA-Z ]*$/;
+        var alphanum = /^[a-zA-Z0-9 ]*$/;
+        var decimal = /^-?\d+(\.\d+)?$/;
+        var id = document.forms["regform"]["id"];
+        var fname = document.forms["regform"]["fname"];      
+        var lname = document.forms["regform"]["lname"];
+        var batch = document.forms["regform"]["batch"];
+
+      //   var email = document.forms["regform"]["email"];
+      //   var batch = document.forms["regform"]["batch"];
+        var english = document.forms["regform"]["english"];
+        var hindi = document.forms["regform"]["hindi"];
+        var math = document.forms["regform"]["math"];
+        var science = document.forms["regform"]["science"];
+        var history = document.forms["regform"]["history"];
+        var geography = document.forms["regform"]["geography"];
+        var remarks = document.forms["regform"]["remarks"];
+        // let batch = document.forms["regform"]["batch"];
+        
+       if(id.value == "")
+       {
+        alert("Id should not be blank");
+        return false;
+       }
+       if(fname.value == "")
+      {
+            alert("first name should not be blank");
+            return false;
+      }
+
+      if(!fname.value.match(letters))
+      {
+      alert("first name must be character");
+      return false;
+      }
+
+      if(lname.value == "")
+      {
+            alert("last name should not be blank");
+            return false;
+      }
+
+      if(!lname.value.match(letters))
+      {
+      alert("last name must be character");
+      return false;
+      }
+
+      if(!batch.value.match(alphanum))
+      {
+      alert("batch value should be alphabets or numbers");
+      return false;
+      }
+
+      if(english.value == "")
+      {
+            alert("english marks should not be blank");
+            return false;
+      }
+      if(english.value > 100) 
+{
+    alert ("english subject marks should not greater than 100");
+    return false;
+}
+
+      if(hindi.value == "")
+      {
+            alert("hindi marks should not be blank");
+            return false;
+      }
+      if(hindi.value > 100) 
+{
+    alert ("hindi subject marks should not greater than 100");
+    return false;
+}
+      if(math.value == "")
+      {
+            alert("math marks should not be blank");
+            return false;
+      }
+      if(math.value >= 100) 
+{
+    alert ("math subject marks should not greater than 100");
+    return false;
+}
+      if(science.value == "")
+      {
+            alert("science marks should not be blank");
+            return false;
+      }
+      if(science.value > 100) 
+{
+    alert ("science subject marks should not greater than 100");
+    return false;
+}
+
+      if(history.value == "")
+      {
+            alert("history marks should not be blank");
+            return false;
+      }
+      if(history.value > 100) 
+{
+    alert ("history subject marks should not greater than 100");
+    return false;
+}
+
+      if(geography.value == "")
+      {
+            alert("geography marks should not be blank");
+            return false;
+      }
+      if(geography.value > 100) 
+{
+    alert ("geography subject marks should not greater than 100");
+    return false;
+}
+
+
+      if(remarks.value.length > 150)
+      {
+        alert("remarks description should only 150 characters");
+        return false;
+      }
+      
+      if(!remarks.value.match(alphanum))
+{
+    alert("remarks value should be alphabets or numbers");
+    return false;
+}
+// if(geography.value.match(decimal))
+// {
+      
+// }
+
+
+return true;
+     }
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+        crossorigin="anonymous">
+</script>
+
+</body>
+</html>

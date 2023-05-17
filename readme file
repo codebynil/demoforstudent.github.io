@@ -1,0 +1,16 @@
+1.dbcon.php
+ - database connection
+2.studentform.php
+ - form page of student to fill details of student with proper validetaion
+3.studentreport.php
+ - all form inputs are shwon in column 
+ - view marks column to show subject wise all marks respected to student id
+4. detail.php
+ - student subject wise marks and total marks
+5. storevalue.php
+ - post action page of form page and insert query details
+6. student.sql
+ for import file
+ - database file name student
+ - table name report
+ 	
