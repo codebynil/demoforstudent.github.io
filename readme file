@@ -1,6 +1,6 @@
 1.dbcon.php
  - database connection
-2.studentform.php
+2.index.php
  - form page of student to fill details of student with proper validetaion
 3.studentreport.php
  - all form inputs are shwon in column 
