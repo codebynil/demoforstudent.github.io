@@ -26,7 +26,7 @@
 </head>
 <body>
       <div class="container mt-3">
-            <a class="btn btn-primary btn-sm" href="studentform.php">Student Form</a>
+            <a class="btn btn-primary btn-sm" href="index.html">Student Form</a>
             <a class="btn btn-primary btn-sm" href="studentreport.php">Student Report</a>
       </div><hr>
       <div class="container">
