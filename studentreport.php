@@ -21,7 +21,7 @@
 </head>
 <body>
       <div class="container mt-3">
-<a class="btn btn-primary btn-sm" href="studentform.php">Back</a>
+<a class="btn btn-primary btn-sm" href="index.html">Back</a>
       </div><hr>
 <table id="example" class="display" style="width:100%">
         <thead>
